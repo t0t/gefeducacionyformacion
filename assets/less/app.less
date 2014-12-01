@@ -1,0 +1,266 @@
+/*!
+ * Roots 6.5.2
+ */
+
+@import "bootstrap/bootstrap.less";
+//@import "handelgotic.css";
+
+
+//a vore... http://codepen.io/shartwijk/pen/lmzEj
+//@import "skroll.less";
+@font-face {
+    font-family: 'handel_gothic_dregular';
+    src: url('../fonts/handel-gothic-d-bold-webfont.eot');
+    src: url('../fonts/handel-gothic-d-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/handel-gothic-d-bold-webfont.woff') format('woff'),
+         url('../fonts/handel-gothic-d-bold-webfont.ttf') format('truetype'),
+         url('../fonts/handel-gothic-d-bold-webfont.svg#handel_gothic_dregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+  @handelgotic:      "handel_gothic_dregular";
+
+h1, h2, h5 { 
+   font-family: @handelgotic;
+}
+.glyphicon {
+  color: @secondarycolor;
+}
+.qtrans_language_chooser {
+  float: right;
+  li {
+    display: inline;
+    a {
+      color: fade(@negrototal, 10%);
+    }
+    &.active {
+      background-color: fade(@negrototal, 10%);
+    }
+  }
+}
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+body {
+	padding-top: @grid-gutter-width * 4 + 2;
+	letter-spacing: @font-size-base / 40;
+  background: url(../img/bg1.svg);
+  background-size: contain;
+  background-repeat: repeat-y;
+}
+ul.nav li.dropdown:hover > ul.dropdown-menu { //arregla el hover del menu bootstrap
+	display: block;    
+}
+/* hack para que los dropdown de BS funcionen on :hover */
+.wpcf7-form .control-group p {
+	line-height: 1px;
+	margin: 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+	
+.well {
+  h4 { margin-top: 0; }
+  clear: both;
+}
+.masinfo {
+  &.well {
+    //background-color: red;
+  }
+}
+.btn_masinfo {
+  > div {
+    display: none;
+  }
+  &.hide {
+    //background-color: blue;
+  }
+}
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.banner { }
+.navbar-header {
+		margin: 10px 0;
+	}
+header {
+    img {
+    padding-top: 15px;
+    }
+  }
+.navbar-nav {
+  margin-left: @grid-gutter-width * 2;
+}
+.navbar-fixed-top {
+	&.shrink {
+		//height: 50%;
+    background-color: @blancototal;
+		img {
+			height: 40px;
+		}
+	}
+}
+nav {
+   padding-top: @grid-gutter-width;
+}
+.shrink {
+   nav {
+      padding-top: inherit;
+   }
+}
+.home {
+   h2 {
+      text-transform: inherit;
+   }
+}
+// Ocultame el .dropdown-menu en mobiles
+.quitame-submenu-mobile() { 
+  ul {
+  &.dropdown-menu {
+      display: none !important;
+    }
+  }  
+}
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.content { }
+
+
+
+/* ==========================================================================
+   Primary Content
+   ========================================================================== */
+
+.main { }
+
+/* Gallery Shortcode */
+.gallery-row { padding: 15px 0; }
+
+
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.sidebar {
+  //background-color: @maincolor;
+}
+.sidebar div:first-child { width: 125px; }
+
+
+/* ==========================================================================
+   Posts
+   ========================================================================== */
+
+.hentry header { }
+.hentry time { }
+.hentry .byline { }
+.hentry .entry-content { }
+.hentry footer { }
+
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.content-info {
+  //background-color: fade(@maincolor,20%);
+  min-height: 75px;
+  a, small {
+    color: @secondarycolor;
+  }
+}
+
+
+
+/* ==========================================================================
+   WordPress Generated Classes
+   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+   ========================================================================== */
+
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { float: left; margin-right: @grid-gutter-width; }
+.alignright { float: right; }
+figure.alignnone { margin-left: 0; margin-right: 0; }
+
+
+    
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media only screen 
+and (min-width : 120px) 
+and (max-width : 400px) {
+  body {
+    padding-top: @grid-gutter-width * 3;
+  }
+  .quitame-submenu-mobile();
+  .logo {
+    img {
+      max-width: 60%;
+      max-height: 60%;
+      height: auto;
+    }
+  }
+  header { height: 90px !important; }
+  .navbar-collapse {
+    background-color: @maincolor;
+    padding: 0 !important;
+  }
+  .navbar-nav {
+    margin: 0;
+    li {
+      float: left;
+      a {
+        padding: 5px;
+      }
+    }
+  }
+  .page-header {
+    padding: inherit;
+    margin-top: 0;
+    letter-spacing: 0;
+    h1 {
+    font-size: 150%;
+    }
+  }
+  nav {
+  }
+}
+@media (min-width: @screen-sm-min) { 
+  
+  nav {
+    font-size: 70%;
+  }
+  .wrap.container { margin-top: @grid-gutter-width; }
+  body {
+    padding-top: @grid-gutter-width * 3;
+  }
+  .navbar-nav { margin-left: 0; }
+}
+
+@media (min-width: @screen-md-min) {
+  .wrap.container { margin-top: inherit; }
+  .navbar-header {
+   }
+   nav ul{
+    float: right;
+   }
+   nav {
+    font-size: inherit;
+   }
+   body {
+    padding-top: @grid-gutter-width * 4 + 2;
+   }
+
+}
+
+@media (min-width: @screen-lg-min) { }
